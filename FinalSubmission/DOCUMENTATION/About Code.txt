@@ -1,0 +1,29 @@
+1. Train and Test are concatenated by dropping 'Grade' from train
+
+2. Columns with less missing values are imputed with mean value
+
+3. roof values are changed from 'yes','YES','NO','no' to jsut 'YES' and 'NO'
+	
+4. roof, which has many missing values is imputed by building a prediction model.
+   By using a voting classifier of multiple models
+
+5. Roof(area) missing values are changed to 0 if 'roof' has value 'NO'
+
+6. Remaining values are imputed using XGBRegressor
+
+7. We stripped $ from 'EXPECTED' column and changed it to integer
+
+8. Multicolinearity is removed and data is made consistant
+
+9. We perform cross validation with multiple models and compare the accuracy
+
+10. Neural Networks is chosen as it has the highest accuracy
+
+11. We choose the epoch value with the maximum validation accuracy 
+
+12. When we obtain the grade value , it can be added to the starting test 
+    And we dont drop it in the train this time
+    We re-run the program and use the 'Grade' variable to predict 'roof' and 
+    'Roof(Area)' . THIS CAUSES ACCURACY TO IMPROVE BY 2-3% when we create the model     again.
+FINAL ACCURACY IN STAGE 1- 94.725674 
+ 
